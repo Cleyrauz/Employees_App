@@ -1,0 +1,37 @@
+<p class="pageHeader">$manager.getFirstName()</p>
+
+<form action="/managers/$manager.getId()/edit" method="post"/>
+
+<form action="/managers" method="post"/>
+<label for="firstName">First Name:</label>
+<input class="inputBox" type="text" name="firstName" required="true" id="firstName"/>
+<form action="/manager" method="post"/>
+
+<label for="lastName">Last Name:</label>
+<input class="inputBox" type="text" name="lastName" required="true" id="lastName"/>
+<form action="/manager" method="post"/>
+
+<label for="salary">Salary(£):</label>
+<input class="inputBox" type="number" name="salary" required="true" id="salary"/>
+<form action="/manager" method="post"/>
+
+<label for="budget">Budget(£):</label>
+<input class="inputBox" type="number" name="budget" required="true" id="budget"/>
+<form action="/manager" method="post">
+
+    <label for="department">Department:</label>
+    <select id="department" name="department">
+        #foreach($department in $departments)
+        <option value="$department.getId()">$department.getTitle()</option>
+        #end
+    </select>
+
+    <input type="submit" value="Edit" class="button"/>
+</form>
+
+
+<form action="/managers/$manager.getId()/delete" method="post">
+    <input type="submit" value="Delete" class="button"/>
+</form>
+
+
